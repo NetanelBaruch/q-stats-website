@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Brand Design Tokens ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand colors */
+  --color-brand-red: #b92b27;
+  --color-brand-red-light: #DD2424;
+  --color-brand-red-bright: #FF5C5C;
+  --color-brand-purple: #6236FF;
+
+  /* Dark premium palette */
+  --color-surface-base: #0a0a0f;
+  --color-surface-card: #1a1a2e;
+  --color-surface-card-hover: #222240;
+  --color-text-primary: #EFF2F7;
+  --color-text-secondary: #a0a0b8;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-glow: rgba(185, 43, 39, 0.3);
+
+  /* Fonts */
+  --font-sans: var(--font-roboto);
+  --font-display: var(--font-poppins);
+
+  /* Custom animations */
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Base Styles ── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+/* ── Dot Grid Background ── */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Gradient Glow Utilities ── */
+.glow-red {
+  background: radial-gradient(ellipse at center, rgba(185, 43, 39, 0.15) 0%, transparent 70%);
+}
+
+.glow-purple {
+  background: radial-gradient(ellipse at center, rgba(98, 54, 255, 0.12) 0%, transparent 70%);
+}
+
+.glow-hero {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(185, 43, 39, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(98, 54, 255, 0.08) 0%, transparent 50%);
+}
+
+/* ── Glass Card Base ── */
+.glass {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover:hover {
+  background: rgba(34, 34, 64, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Gradient Text ── */
+.gradient-text-red {
+  background: linear-gradient(135deg, #DD2424, #FF5C5C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

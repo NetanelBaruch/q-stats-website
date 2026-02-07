@@ -1,0 +1,13 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#glow)" opacity="0.3"/>
+  <defs>
+    <radialGradient id="glow" cx="40%" cy="40%">
+      <stop offset="0%" stop-color="#b92b27"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <text x="600" y="270" text-anchor="middle" fill="#EFF2F7" font-family="Arial,sans-serif" font-size="72" font-weight="bold">Q-Stats</text>
+  <text x="600" y="340" text-anchor="middle" fill="#a0a0b8" font-family="Arial,sans-serif" font-size="28">Free Quora &amp; Reddit Marketing Insights</text>
+  <text x="600" y="400" text-anchor="middle" fill="#FF5C5C" font-family="Arial,sans-serif" font-size="22">Chrome Extension</text>
+</svg>

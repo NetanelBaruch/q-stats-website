@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netanelbaruch.github.io/q-stats-website/sitemap.xml
