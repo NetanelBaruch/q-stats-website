@@ -79,10 +79,6 @@ export default function PrivacyPage() {
                   navigate to a supported Quora or Reddit page so the Extension can activate.
                 </li>
                 <li>
-                  <strong className="text-text-primary">activeTab</strong> — Used to read the URL
-                  of the current active tab to determine if it is a supported page.
-                </li>
-                <li>
                   <strong className="text-text-primary">
                     Host permissions (quora.com, reddit.com)
                   </strong>{" "}
